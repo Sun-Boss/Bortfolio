@@ -30,9 +30,12 @@ export default function Header() {
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2">
                     <img
-                        src="http://www.dsin.kr/img/logo_footer.png"
+                        src="/img/logo.png"
                         alt="디에스인포시스 로고"
-                        className="h-7 md:h-9 w-auto opacity-90 transition-all duration-300"
+                        className={cn(
+                            "h-7 md:h-9 w-auto transition-all duration-300",
+                            !scrolled && "brightness-0 invert opacity-90 drop-shadow-md"
+                        )}
                     />
                 </Link>
 
