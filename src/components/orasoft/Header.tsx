@@ -16,6 +16,7 @@ export default function Header() {
     }, []);
 
     const navItems = [
+        { name: "샘플보기", href: "#" },
         { name: "회사소개", href: "#vision" },
         { name: "사업영역", href: "#products" },
         { name: "고객지원", href: "#support" },
@@ -34,13 +35,26 @@ export default function Header() {
 
                 <nav className="hidden md:flex gap-10 items-center">
                     {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="font-semibold transition-colors cursor-pointer text-[15px] text-gray-700 hover:text-blue-600"
-                        >
-                            {item.name}
-                        </Link>
+                        <div key={item.name} className="relative group py-2">
+                            <Link
+                                href={item.href}
+                                className="font-semibold transition-colors cursor-pointer text-[15px] text-gray-700 group-hover:text-blue-600"
+                            >
+                                {item.name}
+                            </Link>
+
+                            {/* Dropdown Menu for '샘플보기' */}
+                            {item.name === "샘플보기" && (
+                                <div className="absolute top-full left-0 mt-2 w-40 bg-white/95 backdrop-blur-md border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 flex flex-col overflow-hidden">
+                                    <Link href="/" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600">샘플0</Link>
+                                    <Link href="/sample1" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플1</Link>
+                                    <Link href="/sample2" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플2</Link>
+                                    <Link href="/sample3" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플3</Link>
+                                    <Link href="/orasoft" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플페이지1</Link>
+                                </div>
+                            )}
+                        </div>
+
                     ))}
                 </nav>
 

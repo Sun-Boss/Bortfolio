@@ -56,10 +56,10 @@ export default function Header() {
                             {/* Dropdown Menu for '샘플보기' */}
                             {item.name === "샘플보기" && (
                                 <div className="absolute top-full left-0 mt-2 w-40 bg-background/95 backdrop-blur-md border border-white/10 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 flex flex-col overflow-hidden">
+                                    <Link href="/" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue">샘플0</Link>
                                     <Link href="/sample1" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue">샘플1</Link>
                                     <Link href="/sample2" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플2</Link>
                                     <Link href="/sample3" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플3</Link>
-                                    <Link href="/sample4" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플4</Link>
                                     <Link href="/orasoft" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플페이지1</Link>
                                 </div>
                             )}

@@ -10,10 +10,12 @@ import Footer from "@/components/Footer";
 export default function Sample3Page() {
     return (
         <main className="text-foreground min-h-screen relative">
-            <div className="fixed inset-0 -z-50 bg-[url('/img/tech_network3_background.png')] bg-cover bg-center opacity-40 mix-blend-screen" />
+            <div className="fixed inset-0 -z-50 bg-[url('/img/tech_network3_background.png')] bg-[length:min(100vw,1200px)_auto] bg-no-repeat bg-center opacity-40 mix-blend-screen" />
             {/* Global Dark Overlay */}
             <div className="fixed inset-0 -z-40 bg-gray-900/60 backdrop-blur-[2px]" />
             {/*}
+
+            
             <div className="fixed inset-0 -z-50 bg-[#020617]" />
             <div className="fixed inset-0 -z-50 bg-[url('/img/tech_network_background.png')] bg-cover bg-center opacity-40 mix-blend-screen" />
             <div className="fixed top-0 inset-x-0 h-[800px] -z-40 bg-gradient-to-b from-primary-blue/30 to-transparent mix-blend-screen" />
