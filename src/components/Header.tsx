@@ -31,10 +31,10 @@ export default function Header() {
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2">
                     <img
-                        src="/img/logo.png"
+                        src="/img/ds_logo_white.png"
                         alt="디에스인포시스 로고"
                         className={cn(
-                            "h-7 md:h-9 w-auto transition-all duration-300",
+                            "h-7 md:h-14 w-auto transition-all duration-300",
                             !scrolled && "brightness-0 invert opacity-90 drop-shadow-md"
                         )}
                     />
@@ -60,6 +60,7 @@ export default function Header() {
                                     <Link href="/sample2" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플2</Link>
                                     <Link href="/sample3" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플3</Link>
                                     <Link href="/sample4" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플4</Link>
+                                    <Link href="/orasoft" className="px-4 py-3 hover:bg-white/5 transition-colors text-sm text-foreground/80 hover:text-primary-light-blue border-t border-white/5">샘플페이지1</Link>
                                 </div>
                             )}
                         </div>

@@ -9,9 +9,9 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-14 w-full">
                     <div className="flex items-center">
                         <img
-                            src="/img/logo_footer.png"
+                            src="/img/ds_logo_white.png"
                             alt="디에스인포시스 하단로고"
-                            className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                            className="h-8 md:h-14 w-auto opacity-70 hover:opacity-100 transition-opacity"
                         />
                     </div>
 
