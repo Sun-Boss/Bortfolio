@@ -12,8 +12,8 @@ export default function Home() {
     <main className="text-foreground min-h-screen relative">
       {/* Global Fixed Background Image */}
       <div className="fixed inset-0 -z-50 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center" />
-      {/* Global Dark Overlay */}
-      <div className="fixed inset-0 -z-40 bg-black/70 backdrop-blur-[2px]" />
+      {/* Global Dark Overlay <div className="fixed inset-0 -z-40 bg-gray-800/50 backdrop-blur-[2px]" />*/}
+      <div className="fixed inset-0 -z-40 bg-black/50 backdrop-blur-[2px]" />
 
       <Header />
       <Hero />

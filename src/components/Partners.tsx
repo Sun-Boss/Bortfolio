@@ -28,7 +28,7 @@ export default function Partners() {
     }, { scope: container });
 
     return (
-        <section ref={container} className="py-24 bg-transparent border-y border-white/5 overflow-hidden relative">
+        <section ref={container} id="partners" className="py-24 bg-transparent border-y border-white/5 overflow-hidden relative scroll-mt-[120px]">
             <div className="container mx-auto px-4 mb-12 text-center partners-header relative z-20">
                 <h3 className="text-sm font-bold tracking-[0.2em] text-primary-light-blue uppercase mb-2">Trusted By</h3>
                 <h2 className="text-3xl font-black text-foreground drop-shadow-sm">주요 고객사 및 파트너</h2>

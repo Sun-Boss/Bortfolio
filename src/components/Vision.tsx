@@ -51,7 +51,7 @@ export default function Vision() {
                     <div className="vision-line bg-primary-blue w-full h-0" />
                 </div>
 
-                <div className="space-y-32">
+                <div id="vision-section" className="space-y-32 scroll-mt-[120px]">
                     {/* Vision 1 */}
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 items-start lg:items-center">
                         <div className="lg:w-1/2 text-left lg:text-right">

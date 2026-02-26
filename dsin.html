@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
 	<link rel="stylesheet" href="/css/style.css" />
 	<link rel="stylesheet" href="/css/common/common.css" />
 	<link rel="stylesheet" href="/css/common/custom.css" />
-	
+
 
 	<!-- jQuery & Script -->
 	<script src="/js/jquery-1.12.4.min.js"></script>
@@ -22,7 +23,7 @@
 	<script src="/js/common/jquery.form.js"></script>
 	<script src="/js/common/common.js"></script>
 	<script src="/js/script.js"></script>
-	
+
 
 	<!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
 	<!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
@@ -30,287 +31,298 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-<script type="text/javascript">
-	var login_type='';
-	var logged_in='';
-	var this_device='pc';
-	var this_path='';
-	var csrf_hash='10bfc14ecc198a0747f342c1e44abc71';
-</script>	
+	<script type="text/javascript">
+		var login_type = '';
+		var logged_in = '';
+		var this_device = 'pc';
+		var this_path = '';
+		var csrf_hash = '10bfc14ecc198a0747f342c1e44abc71';
+	</script>
 </head>
+
 <body>
-<div id='load_div' class="load_img text-hide">로드이미지</div>
-<div id="alert_div"></div>
-<div id="modal_div"></div>
-<nav class="navbar navbar-default navbar-fixed-top" id="header_wrap">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/" id="logo" style="line-height:55px !important;">
-				<img src="/img/logo.png" alt="디에스인포시스(주) 로고" />
-			</a>
+	<div id='load_div' class="load_img text-hide">로드이미지</div>
+	<div id="alert_div"></div>
+	<div id="modal_div"></div>
+	<nav class="navbar navbar-default navbar-fixed-top" id="header_wrap">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/" id="logo" style="line-height:55px !important;">
+					<img src="/img/logo.png" alt="디에스인포시스(주) 로고" />
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div id="navbar_wrap" class="navbar-right">
+					<ul class="navbar-nav list-unstyled">
+						<li class="gnb_menu dropdown">
+							<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-expanded="false">회사소개</a>
+							<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
+								<li><a href="/sample1.html">샘플1</a></li>
+								<li><a href="/sample2.html">샘플2</a></li>
+								<li><a href="/sample3.html">샘플3</a></li>
+								<li><a href="/sample4.html">샘플4</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu dropdown">
+							<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-expanded="false">사업영역</a>
+							<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
+								<li><a href="/si">SI 사업</a></li>
+								<li><a href="/security">보안 솔루션</a></li>
+								<li><a href="/finance">금융 솔루션</a></li>
+								<li><a href="/iot">IoT 솔루션</a></li>
+								<li><a href="/pda">모바일 컴퓨터</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu dropdown">
+							<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-expanded="false">제안 및 문의</a>
+							<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
+								<li><a href="/cs">제안 및 문의</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu dropdown">
+							<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-expanded="false">공지사항</a>
+							<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
+								<li><a href="/notice?board_no=1">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<div id="navbar_wrap" class="navbar-right">
-				<ul class="navbar-nav list-unstyled">
-					<li class="gnb_menu dropdown">
-						<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">회사소개</a>
-						<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
-							<li><a href="/company">회사개요</a></li>
-							<li><a href="/vision">회사비전</a></li>
-							<li><a href="/map">회사위치</a></li>
-						</ul>
+	</nav>
+	<div class="container-fluid" id="main_wrap">
+		<!-- begin of Modal -->
+		<!-- End og Modal -->
+		<div class="row">
+			<div class="carousel slide" data-ride="carousel" id="mainbanner_wrap">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#mainbanner_wrap" data-slide-to="0" class="active"></li>
+					<li data-target="#mainbanner_wrap" data-slide-to="1"></li>
+					<li data-target="#mainbanner_wrap" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/img/tech_network_background.png" alt="The Best Value Partner">
+						<div class="carousel-caption">
+							<p class="mb_txt1">고객에게 새로운 가치를 드리는</p>
+							<p class="mb_txt2">IT 서비스 전문기업</p>
+							<a href="/company" class="mb_btn">자세히 보기</a>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/img/tech_network_background.png" alt="The Best Value Partner">
+						<div class="carousel-caption">
+							<p class="mb_txt1">변화와 혁신을 통해</p>
+							<p class="mb_txt2">고객과 함께 성장하는 기업</p>
+							<a href="/company" class="mb_btn">자세히 보기</a>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/img/tech_network_background.png" alt="The Best Value Partner">
+						<div class="carousel-caption">
+							<p class="mb_txt1">기술에 열정을 더해</p>
+							<p class="mb_txt2">고객감동 서비스를 제공하는 기업</p>
+							<a href="/company" class="mb_btn">자세히 보기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="main_sevice">
+			<div class="container">
+				<ul class="list-unstyled row">
+					<li>
+						<a href="/si">
+							<p>SI사업</p>
+							<p>SI Business</p>
+						</a>
 					</li>
-					<li class="gnb_menu dropdown">
-						<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">사업영역</a>
-						<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
-							<li><a href="/si">SI 사업</a></li>
-							<li><a href="/security">보안 솔루션</a></li>
-							<li><a href="/finance">금융 솔루션</a></li>
-							<li><a href="/iot">IoT 솔루션</a></li>
-							<li><a href="/pda">모바일 컴퓨터</a></li>
-						</ul>
+					<li>
+						<a href="/security">
+							<p>보안솔루션</p>
+							<p>Security Business</p>
+						</a>
 					</li>
-					<li class="gnb_menu dropdown">
-						<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">제안 및 문의</a>
-						<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
-							<li><a href="/cs">제안 및 문의</a></li>
-						</ul>
+					<li>
+						<a href="/iot">
+							<p>IoT솔루션</p>
+							<p>IoT Solution</p>
+						</a>
 					</li>
-					<li class="gnb_menu dropdown">
-						<a href="/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">공지사항</a>
-						<ul class="list-unstyled gnb_submenu dropdown-menu" role="menu">
-							<li><a href="/notice?board_no=1">공지사항</a></li>
-						</ul>
+					<li>
+						<a href="/finance">
+							<p>금융솔루션</p>
+							<p>Finance Solution</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pda">
+							<p>모바일 컴퓨터</p>
+							<p>Mobile Computers</p>
+						</a>
 					</li>
 				</ul>
 			</div>
 		</div>
-	</div>
-</nav>
-<div class="container-fluid" id="main_wrap">
-<!-- begin of Modal -->
-<!-- End og Modal -->
-    <div class="row">
-		<div class="carousel slide" data-ride="carousel" id="mainbanner_wrap">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#mainbanner_wrap" data-slide-to="0" class="active"></li>
-				<li data-target="#mainbanner_wrap" data-slide-to="1"></li>
-				<li data-target="#mainbanner_wrap" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="/img/mainbanner01.png" alt="The Best Value Partner">
-					<div class="carousel-caption">
-						<p class="mb_txt1">고객에게 새로운 가치를 드리는</p>
-						<p class="mb_txt2">IT 서비스 전문기업</p>
-						<a href="/company" class="mb_btn">자세히 보기</a>
+		<div class="row" id="main_notice">
+			<div class="container">
+				<div class="row overflow">
+					<div class="title_wrap overflow">
+						<div class="titles pull-left">
+							<h3>Notice</h3>
+						</div>
+						<a href="/notice?board_no=1" class="btn btn-info pull-right">자세히보기</a>
 					</div>
-				</div>
-				<div class="item">
-					<img src="/img/mainbanner02.png" alt="The Best Value Partner">
-					<div class="carousel-caption">
-						<p class="mb_txt1">변화와 혁신을 통해</p>
-						<p class="mb_txt2">고객과 함께 성장하는 기업</p>
-						<a href="/company" class="mb_btn">자세히 보기</a>
-					</div>
-				</div>
-				<div class="item">
-					<img src="/img/mainbanner03.png" alt="The Best Value Partner">
-					<div class="carousel-caption">
-						<p class="mb_txt1">기술에 열정을 더해</p>
-						<p class="mb_txt2">고객감동 서비스를 제공하는 기업</p>
-						<a href="/company" class="mb_btn">자세히 보기</a>
+					<div id="notice_card_wrap" class="carousel slide row" data-ride="carousel" data-interval="false"
+						data-wrap="false">
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner notice_card" role="listbox">
+							<div class="wrap item active">
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=122">
+										<h4><strong>국회사무처 "차세대 e의안시스템 구축 사업(장비도입)" 계약 체결</strong></h4>
+										<h5>
+
+											 
+
+											▶ 국회 국회사..</h5>
+										<p class="text-muted text-right">2024-12-26</p>
+									</a>
+								</div>
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=121">
+										<h4><strong>주택도시보증공사 "디지털 혁신을 위한 차세대 정보시스템 구축 사업" 계약 체결</strong></h4>
+										<h5>
+
+											 
+
+											▶ 주택도시보..</h5>
+										<p class="text-muted text-right">2024-12-13</p>
+									</a>
+								</div>
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=120">
+										<h4><strong>국회사무처 "국회정보시스템 통합유지관리 및 위탁운영 3개년 사업" 계약 체결</strong></h4>
+										<h5>
+
+											 
+
+											▶ 국회 국회사..</h5>
+										<p class="text-muted text-right">2024-06-25</p>
+									</a>
+								</div>
+							</div>
+							<div class="wrap item">
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=115">
+										<h4><strong>국민건강보험공단 "2024년 정보시스템통합유지관리 용역 사업" 계약 체결</strong></h4>
+										<h5>
+
+											 
+
+											▶ 국민건강보..</h5>
+										<p class="text-muted text-right">2024-05-31</p>
+									</a>
+								</div>
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=114">
+										<h4><strong>국민건강보험공단 "2024년 디지털서비스 확대구축 사업" 수주</strong></h4>
+										<h5>
+
+											 
+
+											▶ 국민건강보..</h5>
+										<p class="text-muted text-right">2024-05-16</p>
+									</a>
+								</div>
+								<div class="col-md-4 card_wrap">
+									<a href="/notice/view?board_no=1&post_no=113">
+										<h4><strong>대법원 "사법부 데이터센터 전산장비 유지보수 사업(2024년~2025년)" 계약 체결</strong></h4>
+										<h5>
+
+											 
+
+											▶ 대법원 "사..</h5>
+										<p class="text-muted text-right">2024-02-02</p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- Controls -->
+						<div class="card_control text-center">
+							<a class="prev" href="#notice_card_wrap" role="button" data-slide="prev">
+								<img src="/img/linearrow_left.png" alt="이전" /> PREV
+							</a>
+							<a class="next" href="#notice_card_wrap" role="button" data-slide="next">
+								NEXT <img src="/img/linearrow_right.png" alt="다음" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row" id="main_sevice">
+		<div class="row" id="main_cs">
+			<div class="container">
+				<div class="col-md-5 col-md-offset-1 text-center title_wrap ">
+					<div class="titles">
+						<h3>고객 상담 센터</h3>
+					</div>
+					<a href="/cs" class="callcenter">
+						<p>T. 02-6269-7900</p>
+						<p>평일 09:00 AM ~ 06:00 PM<br />토요일, 일요일, 공휴일 휴무</p>
+					</a>
+				</div>
+				<div class="col-md-5 text-center title_wrap">
+					<div class="titles">
+						<h3>회사위치</h3>
+					</div>
+					<a href="/map" class="map">
+						<p>(08501) 서울특별시 금천구 가산디지털1로 205-28, 1101~1102호(가산동, </p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div> <!-- /container-fluid -->
+	<div class="container-fluid" id="footer_wrap">
 		<div class="container">
-			<ul class="list-unstyled row">
-				<li>
-					<a href="/si">
-						<p>SI사업</p>
-						<p>SI Business</p>
-					</a>
-				</li>
-				<li>
-					<a href="/security">
-						<p>보안솔루션</p>
-						<p>Security Business</p>
-					</a>
-				</li>
-				<li>
-					<a href="/iot">
-						<p>IoT솔루션</p>
-						<p>IoT Solution</p>
-					</a>
-				</li>
-				<li>
-					<a href="/finance">
-						<p>금융솔루션</p>
-						<p>Finance Solution</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pda">
-						<p>모바일 컴퓨터</p>
-						<p>Mobile Computers</p>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="row" id="main_notice">
-		<div class="container">
-			<div class="row overflow">
-				<div class="title_wrap overflow">
-					<div class="titles pull-left">
-						<h3>Notice</h3>
-					</div>
-					<a href="/notice?board_no=1" class="btn btn-info pull-right">자세히보기</a>
-				</div>
-				<div id="notice_card_wrap" class="carousel slide row" data-ride="carousel" data-interval="false" data-wrap="false">
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner notice_card" role="listbox">
-											<div class="wrap item active">
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=122">
-									<h4><strong>국회사무처 "차세대 e의안시스템 구축 사업(장비도입)" 계약 체결</strong></h4>
-									<h5>
-
- 
-
-▶ 국회 국회사..</h5>
-									<p class="text-muted text-right">2024-12-26</p>
-								</a>
-							</div>
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=121">
-									<h4><strong>주택도시보증공사 "디지털 혁신을 위한 차세대 정보시스템 구축 사업" 계약 체결</strong></h4>
-									<h5>
-
- 
-
-▶ 주택도시보..</h5>
-									<p class="text-muted text-right">2024-12-13</p>
-								</a>
-							</div>
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=120">
-									<h4><strong>국회사무처 "국회정보시스템 통합유지관리 및 위탁운영 3개년 사업" 계약 체결</strong></h4>
-									<h5>
-
- 
-
-▶ 국회 국회사..</h5>
-									<p class="text-muted text-right">2024-06-25</p>
-								</a>
-							</div>
-													</div>
-						<div class="wrap item">
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=115">
-									<h4><strong>국민건강보험공단 "2024년 정보시스템통합유지관리 용역 사업" 계약 체결</strong></h4>
-									<h5>
-
- 
-
-▶ 국민건강보..</h5>
-									<p class="text-muted text-right">2024-05-31</p>
-								</a>
-							</div>
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=114">
-									<h4><strong>국민건강보험공단 "2024년 디지털서비스 확대구축 사업" 수주</strong></h4>
-									<h5>
-
- 
-
-▶ 국민건강보..</h5>
-									<p class="text-muted text-right">2024-05-16</p>
-								</a>
-							</div>
-														<div class="col-md-4 card_wrap">
-								<a href="/notice/view?board_no=1&post_no=113">
-									<h4><strong>대법원 "사법부 데이터센터 전산장비 유지보수 사업(2024년~2025년)" 계약 체결</strong></h4>
-									<h5>
-
- 
-
-▶ 대법원 "사..</h5>
-									<p class="text-muted text-right">2024-02-02</p>
-								</a>
-							</div>
-													</div>
-					</div>
-					<!-- Controls -->
-					<div class="card_control text-center">
-						<a class="prev" href="#notice_card_wrap" role="button" data-slide="prev">
-							<img src="/img/linearrow_left.png" alt="이전"/> PREV
-						</a>
-						<a class="next" href="#notice_card_wrap" role="button" data-slide="next">
-							NEXT <img src="/img/linearrow_right.png" alt="다음" />
-						</a>
-					</div>
-				</div>
+			<div class="col-md-2">
+				<a href="/"><img src="/img/logo_footer.png" alt="디에스인포시스 하단로고" /></a>
+			</div>
+			<div class="col-md-10">
+				<ul class="list-unstyled footer_menu">
+					<li><a href="/company">회사소개</a></li>
+					<li><a href="/map">회사위치</a></li>
+					<li><a href="/cs">제안 및 문의</a></li>
+					<li><a href="/notice?board_no=1">공지사항</a></li>
+				</ul>
+				<br />
+				<div>(08501) 서울특별시 금천구 가산디지털1로 205-28, 1101~1102호(가산동, &nbsp;&nbsp;&nbsp;T.
+					02-6269-7900&nbsp;&nbsp;&nbsp;F. 02-6269-7904&nbsp;&nbsp;&nbsp;E. info@dsin.kr</div>
+				<div>Copyright 2017. DS Infosys Co., Ltd all rights reserved.</div>
 			</div>
 		</div>
 	</div>
-	<div class="row" id="main_cs">
-		<div class="container">
-			<div class="col-md-5 col-md-offset-1 text-center title_wrap ">
-				<div class="titles">
-					<h3>고객 상담 센터</h3>
-				</div>
-				<a href="/cs" class="callcenter">
-					<p>T. 02-6269-7900</p>
-					<p>평일 09:00 AM ~ 06:00 PM<br/>토요일, 일요일, 공휴일 휴무</p>
-				</a>
-			</div>
-			<div class="col-md-5 text-center title_wrap">
-				<div class="titles">
-					<h3>회사위치</h3>
-				</div>
-				<a href="/map" class="map">
-					<p>(08501) 서울특별시 금천구 가산디지털1로 205-28, 1101~1102호(가산동, </p>
-				</a>
-			</div>
-		</div>
-	</div>
-</div> <!-- /container-fluid --><div class="container-fluid" id="footer_wrap">
-	<div class="container">
-		<div class="col-md-2">
-			<a href="/"><img src="/img/logo_footer.png" alt="디에스인포시스 하단로고" /></a>
-		</div>
-		<div class="col-md-10">
-			<ul class="list-unstyled footer_menu">
-				<li><a href="/company">회사소개</a></li>
-				<li><a href="/map">회사위치</a></li>
-				<li><a href="/cs">제안 및 문의</a></li>
-				<li><a href="/notice?board_no=1">공지사항</a></li>
-			</ul>
-			<br />
-			<div>(08501) 서울특별시 금천구 가산디지털1로 205-28, 1101~1102호(가산동, &nbsp;&nbsp;&nbsp;T. 02-6269-7900&nbsp;&nbsp;&nbsp;F. 02-6269-7904&nbsp;&nbsp;&nbsp;E. info@dsin.kr</div>
-			<div>Copyright 2017. DS Infosys Co., Ltd all rights reserved.</div>
-		</div>
-	</div>
-</div>
-<a href="#" id="scrollTop" class=""><!-- 맨위로 버튼 -->
-	<span class="glyphicon glyphicon-chevron-up"></span>
-</a>
+	<a href="#" id="scrollTop" class=""><!-- 맨위로 버튼 -->
+		<span class="glyphicon glyphicon-chevron-up"></span>
+	</a>
 </body>
+
 </html>
 <script src="/js/common/function.js"></script>
 <script src="/js/common/form.js"></script>
 <script type="text/javascript">
-$(window).scroll(function(){});
-$(window).load(function(){});
-$(document).ready(function(){});
+	$(window).scroll(function () { });
+	$(window).load(function () { });
+	$(document).ready(function () { });
 </script>

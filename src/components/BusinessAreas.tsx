@@ -29,14 +29,14 @@ export default function BusinessAreas() {
     }, { scope: container });
 
     return (
-        <section ref={container} className="relative py-24 bg-transparent overflow-hidden border-y border-white/5">
+        <section ref={container} id="business-areas" className="relative py-24 bg-transparent overflow-hidden border-y border-white/5 scroll-mt-[120px]">
             {/* Background glowing effects for 3D feel */}
             <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-primary-blue/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
             <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-brand-yellow/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
 
             <div className="container mx-auto px-4 max-w-7xl relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-black text-foreground mb-4">비즈니스 영역</h2>
+                    <h2 className="text-3xl font-black text-foreground mb-4">사업 영역</h2>
                     <p className="text-foreground/60 font-light">디에스인포시스의 핵심 사업 역량을 소개합니다</p>
                 </div>
 

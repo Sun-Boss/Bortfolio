@@ -14,7 +14,7 @@ export default function ContactLocation() {
     }, { scope: container });
 
     return (
-        <section ref={container} className="py-24 bg-transparent relative">
+        <section ref={container} id="contact-location" className="py-24 bg-transparent relative scroll-mt-[120px]">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
