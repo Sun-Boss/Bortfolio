@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-800 pb-12 mb-8">
 
                     <div className="md:col-span-1">
-                        <Link href="/orasoft" className="inline-block mb-6">
+                        <Link href="/sample" className="inline-block mb-6">
                             <img src="/img/ds_logo_white.png" alt="DS INFOSYS" className="h-[52px] w-auto" />
                         </Link>
                         <p className="text-sm leading-relaxed mb-6 max-w-xs">

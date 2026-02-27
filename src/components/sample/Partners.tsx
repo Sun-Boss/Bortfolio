@@ -14,7 +14,7 @@ export default function Partners() {
 
     useGSAP(() => {
         // Continuous scrolling marquee
-        gsap.to(".marquee-inner-orasoft", {
+        gsap.to(".marquee-inner-sample", {
             xPercent: -50,
             ease: "none",
             duration: 25,
@@ -43,7 +43,7 @@ export default function Partners() {
                 <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-                <div ref={marqueeRef} className="marquee-inner-orasoft flex w-max gap-8 items-center pr-8">
+                <div ref={marqueeRef} className="marquee-inner-sample flex w-max gap-8 items-center pr-8">
                     {/* Double the array for seamless endless loop */}
                     {[...clients, ...clients].map((client, i) => (
                         <div key={i} className="flex-none px-10 py-5 bg-gray-50 border border-gray-100 rounded-xl hover:border-blue-200 hover:bg-blue-50 hover:shadow-sm transition-all duration-300">

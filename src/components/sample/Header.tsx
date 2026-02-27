@@ -29,7 +29,7 @@ export default function Header() {
             scrolled ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200 py-4" : "bg-white py-6 border-b border-gray-100"
         )}>
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-                <Link href="/orasoft" className="flex items-center gap-2">
+                <Link href="/sample" className="flex items-center gap-2">
                     <img src="/img/ds_logo_orange.png" alt="DS INFOSYS" className="h-[52px] w-auto" />
                 </Link>
 
@@ -46,7 +46,7 @@ export default function Header() {
                             {/* Dropdown Menu for '샘플보기' */}
                             {item.name === "샘플보기" && (
                                 <div className="absolute top-full left-0 mt-2 w-40 bg-white/95 backdrop-blur-md border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 flex flex-col overflow-hidden">
-                                    <Link href="/sample0" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600">샘플1</Link>
+                                    <Link href="/sample1" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600">샘플1</Link>
                                     {/*
                                     <Link href="/" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플1</Link>
                                     <Link href="/sample2" className="px-4 py-3 hover:bg-gray-50 transition-colors text-sm text-gray-700 hover:text-blue-600 border-t border-gray-50">샘플2</Link>
