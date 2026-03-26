@@ -22,7 +22,7 @@ export default function Hero() {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 {/* Image of fresh apples in an orchard */}
-                <div className="hero-bg absolute inset-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('/sample/img/orchard-hero.png')" }} />
+                <div className="hero-bg absolute inset-0 bg-cover bg-center opacity-100" style={{ backgroundImage: `url('${process.env.NODE_ENV === 'production' ? '/Bortfolio' : ''}/img/orchard-hero.png')` }} />
                 <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fdfbf7] via-transparent to-transparent" />
             </div>
