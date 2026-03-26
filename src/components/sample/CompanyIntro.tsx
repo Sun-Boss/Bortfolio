@@ -74,7 +74,7 @@ export default function CompanyIntro() {
                         <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1 relative">
                             <div className="absolute -inset-4 bg-orange-100/50 rounded-full blur-3xl -z-10" />
                             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-orange-50">
-                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${process.env.NODE_ENV === 'production' ? '/Bortfolio' : ''}/img/orchard-story1.png')` }} />
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/img/orchard-story1.png')` }} />
                             </div>
                         </div>
                         <div className="lg:w-1/2 text-left order-1 lg:order-2 md:pl-12 lg:pl-0">
@@ -107,7 +107,7 @@ export default function CompanyIntro() {
                         <div className="lg:w-1/2 md:pl-12 lg:pl-0 relative">
                             <div className="absolute -inset-4 bg-green-100/50 rounded-full blur-3xl -z-10" />
                             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-green-50">
-                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${process.env.NODE_ENV === 'production' ? '/Bortfolio' : ''}/img/orchard-story2.png')` }} />
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/img/orchard-story2.png')` }} />
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ export default function CompanyIntro() {
                         <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1 relative">
                             <div className="absolute -inset-4 bg-yellow-100/50 rounded-full blur-3xl -z-10" />
                             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-yellow-50">
-                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${process.env.NODE_ENV === 'production' ? '/Bortfolio' : ''}/img/orchard-story3.png')` }} />
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/img/orchard-story3.png')` }} />
                             </div>
                         </div>
                         <div className="lg:w-1/2 text-left order-1 lg:order-2 md:pl-12 lg:pl-0">
