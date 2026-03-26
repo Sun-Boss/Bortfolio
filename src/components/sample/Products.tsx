@@ -1,38 +1,49 @@
 "use client";
 
 import { useRef } from "react";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
+import { Apple, Leaf, Sun, Droplets } from "lucide-react";
 
 const products = [
     {
-        name: "SI사업",
-        desc: "최적화된 시스템 통합 및 구축을 통한 IT 인프라 패러다임 제시",
-        features: ["시스템 통합", "IT 인프라 구축", "맞춤형 시스템 설계"],
-        icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+        name: "청송 꿀사과",
+        season: "9월 ~ 11월",
+        desc: "맑은 공기를 품고 자라 아삭하고\n달콤한 과즙이 꽉 찬 프리미엄 꿀사과",
+        features: ["15 Brix 이상 당도 보장", "껍질째 먹는 안심 사과", "산지 당일 수확직송"],
+        icon: Apple,
+        color: "text-red-500",
+        bg: "bg-red-50",
+        border: "hover:border-red-200"
     },
     {
-        name: "보안솔루션",
-        desc: "기업의 안전한 디지털 자산을\n지키는 최첨단 보안 인프라 제공",
-        features: ["네트워크 보안", "엔드포인트 보안", "보안 컨설팅"],
-        icon: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+        name: "나주 신고배",
+        season: "9월 ~ 10월",
+        desc: "풍부한 과즙과 시원하고\n아삭한 식감이 일품인 최상급 배",
+        features: ["가족 명절 선물 강력추천", "부드러운 과육", "최상품 엄선 포장"],
+        icon: Leaf,
+        color: "text-yellow-600",
+        bg: "bg-yellow-50",
+        border: "hover:border-yellow-200"
     },
     {
-        name: "IoT솔루션",
-        desc: "사물인터넷 기반 초연결 사회를 선도하는 스마트 솔루션",
-        features: ["스마트 팩토리", "디바이스 연동", "데이터 모니터링"],
-        icon: "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5 M9 18h6 M10 22h4"
+        name: "햇살 머금은 복숭아",
+        season: "7월 ~ 8월",
+        desc: "한여름의 무더위를 잊게 해줄\n달콤하고 향긋한 제철 복숭아",
+        features: ["입안 가득 번지는 향기", "부드러운 백도/단단한 황도", "상처 없는 꼼꼼한 포장"],
+        icon: Sun,
+        color: "text-pink-500",
+        bg: "bg-pink-50",
+        border: "hover:border-pink-200"
     },
     {
-        name: "금융솔루션",
-        desc: "안정성과 신뢰성을 바탕으로 한 핀테크 및 차세대 금융 시스템",
-        features: ["차세대 금융", "결제 시스템", "핀테크 인프라"],
-        icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-    },
-    {
-        name: "모바일 컴퓨터",
-        desc: "언제 어디서나 접근 가능한\n스마트 모바일 워크스페이스\n구축",
-        features: ["모바일 워크", "PDA 시스템", "산업용 디바이스"],
-        icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+        name: "프리미엄 샤인머스캣",
+        season: "8월 ~ 10월",
+        desc: "망고 향이 가득, 톡 터지는\n상큼함이 매력적인 씨 없는 포도",
+        features: ["망고 같은 짙은 단맛", "알이 굵은 최상급 상품", "씨가 없어 먹기 편안함"],
+        icon: Droplets,
+        color: "text-green-500",
+        bg: "bg-green-50",
+        border: "hover:border-green-200"
     }
 ];
 
@@ -41,7 +52,7 @@ export default function Products() {
 
     useGSAP(() => {
         gsap.fromTo(".product-card",
-            { y: 40, opacity: 0 },
+            { y: 50, opacity: 0 },
             {
                 scrollTrigger: {
                     trigger: container.current,
@@ -50,48 +61,58 @@ export default function Products() {
                 y: 0,
                 opacity: 1,
                 duration: 0.8,
-                stagger: 0.1,
+                stagger: 0.15,
                 ease: "power3.out"
             }
         );
     }, { scope: container });
 
     return (
-        <section ref={container} id="products" className="py-24 bg-gray-50 text-gray-900 border-t border-gray-100 scroll-mt-[100px]">
+        <section ref={container} id="products" className="py-24 bg-white text-gray-900 scroll-mt-[100px]">
             <div className="container mx-auto px-6 lg:px-12">
 
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-3 block">Business Areas</span>
-                    <h2 className="text-3xl md:text-4xl font-black mb-4">디에스인포시스의<br />다양한 사업 영역을 확인해보세요.</h2>
-                    <p className="text-gray-500 font-medium">귀하의 비즈니스에 가장 적합한 IT 파트너를 선택하세요.</p>
+                    <span className="text-orange-600 font-bold tracking-widest text-sm uppercase mb-3 block">Seasonal Fruits</span>
+                    <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight text-gray-900">지현이네 제철 과일</h2>
+                    <p className="text-gray-600 text-lg font-medium">자연의 시간에 맞춰 가장 맛있게 익었을 때 수확합니다.<br />건강하고 달콤한 제철 과일들을 만나보세요.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                    {products.map((p, i) => (
-                        <div key={i} className="product-card opacity-0 group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {products.map((p, i) => {
+                        const Icon = p.icon;
+                        return (
+                            <div key={i} className={`product-card opacity-0 group bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.06)] ${p.border} transition-all duration-300 flex flex-col h-full hover:-translate-y-2`}>
 
-                            <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d={p.icon} />
-                                </svg>
+                                <div className={`w-16 h-16 ${p.bg} ${p.color} rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                                    <Icon size={32} strokeWidth={2.5} />
+                                </div>
+
+                                <div className="mb-4">
+                                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${p.color} ${p.bg} mb-3`}>
+                                        수확기: {p.season}
+                                    </span>
+                                    <h3 className="text-2xl font-bold text-gray-900">{p.name}</h3>
+                                </div>
+                                
+                                <p className="text-base text-gray-500 mb-8 flex-grow leading-relaxed whitespace-pre-line">{p.desc}</p>
+
+                                <ul className="space-y-3 border-t border-gray-100 pt-6 mt-auto">
+                                    {p.features.map((f, idx) => (
+                                        <li key={idx} className="flex items-start text-sm font-medium text-gray-600">
+                                            <svg className={`w-5 h-5 mr-2 ${p.color} shrink-0`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span className="leading-snug">{f}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <button className={`mt-8 w-full py-3 rounded-xl font-bold bg-gray-50 text-gray-700 group-hover:${p.bg} group-hover:${p.color} transition-colors border border-gray-100`}>
+                                    자세히 보기
+                                </button>
                             </div>
-
-                            <h3 className="text-xl font-bold mb-3 text-gray-900">{p.name}</h3>
-                            <p className="text-sm text-gray-500 mb-6 flex-grow leading-relaxed whitespace-pre-line">{p.desc}</p>
-
-                            <ul className="space-y-2 border-t border-gray-100 pt-6 mt-auto">
-                                {p.features.map((f, idx) => (
-                                    <li key={idx} className="flex items-center text-sm font-medium text-gray-600">
-                                        <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        {f}
-                                    </li>
-                                ))}
-                            </ul>
-
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
             </div>

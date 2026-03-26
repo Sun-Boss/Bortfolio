@@ -1,14 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 
 export default function CompanyIntro() {
     const container = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         gsap.fromTo(".intro-element",
-            { y: 40, opacity: 0 },
+            { y: 50, opacity: 0 },
             {
                 scrollTrigger: {
                     trigger: container.current,
@@ -16,8 +16,8 @@ export default function CompanyIntro() {
                 },
                 y: 0,
                 opacity: 1,
-                duration: 0.8,
-                stagger: 0.15,
+                duration: 1,
+                stagger: 0.2,
                 ease: "power3.out"
             }
         );
@@ -33,7 +33,7 @@ export default function CompanyIntro() {
                         end: "bottom 20%",
                         scrub: 1.5 // Smooth connection to scroll position
                     },
-                    scale: 1.1,
+                    scale: 1.15,
                     ease: "none"
                 }
             );
@@ -55,68 +55,80 @@ export default function CompanyIntro() {
     }, { scope: container });
 
     return (
-        <section ref={container} id="vision" className="relative py-24 bg-white border-t border-gray-100 overflow-hidden scroll-mt-[100px]">
-            <div className="container mx-auto px-6 lg:px-12 relative">
+        <section ref={container} id="story" className="relative py-32 bg-[#fdfbf7] overflow-hidden scroll-mt-[100px]">
+            <div className="container mx-auto px-6 lg:px-12 relative text-center mb-20">
+                <span className="text-orange-600 font-bold tracking-widest text-sm uppercase mb-3 block">Our Story</span>
+                <h2 className="text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">지현이네 가족 이야기</h2>
+            </div>
 
+            <div className="container mx-auto px-6 lg:px-12 relative">
                 {/* Visual Line Background */}
-                <div className="absolute left-[24px] lg:left-1/2 top-0 bottom-0 w-[1px] bg-gray-200 hidden md:block">
-                    <div className="vision-line bg-blue-600 w-full h-0" />
+                <div className="absolute left-[24px] lg:left-1/2 top-0 bottom-0 w-[2px] bg-orange-100 hidden md:block">
+                    <div className="vision-line bg-orange-500 w-full h-0" />
                 </div>
 
-                <div className="space-y-24">
+                <div className="space-y-32">
 
-                    {/* Vision 1 */}
-                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-                        <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1">
-                            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative bg-gray-100">
-                                <div className="vision-img absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
+                    {/* Story 1 */}
+                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+                        <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1 relative">
+                            <div className="absolute -inset-4 bg-orange-100/50 rounded-full blur-3xl -z-10" />
+                            <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-orange-50">
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/sample/img/orchard-story1.png')" }} />
                             </div>
                         </div>
                         <div className="lg:w-1/2 text-left order-1 lg:order-2 md:pl-12 lg:pl-0">
-                            <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-4 block">Our Vision</span>
-                            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
-                                변화와 혁신을 통해<br />
-                                고객과 함께 성장하는 기업
-                            </h2>
+                            <span className="text-orange-600 font-bold tracking-widest text-sm mb-4 block">TRADITION</span>
+                            <h3 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                                3대째 이어온<br />
+                                정직한 고집
+                            </h3>
                             <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                                디에스인포시스는 끊임없는 기술 혁신과 도전 정신으로 고객의 비즈니스 가치를<br />극대화합니다. 변화하는 IT 환경 속에서 가장 신뢰받는 파트너로서 새로운 패러다임을<br />제시하며, 지속 가능한 동반 성장을 이룩합니다.
+                                농약 없는 건강한 땅을 일구며 지내온 시간들.<br />
+                                할아버지의 거친 손에서 아버지의 땀방울로, 그리고 이제는 우리 세대로 이어지는 과수원에 대한 사랑.<br />
+                                크기나 모양보다는 <strong>'건강한 맛'</strong> 하나만 고집합니다.
                             </p>
                         </div>
                     </div>
 
-                    {/* Vision 2 */}
-                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+                    {/* Story 2 */}
+                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
                         <div className="lg:w-1/2 text-left md:pl-12 lg:pl-0">
-                            <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-4 block">Core Value</span>
-                            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
-                                기술에 열정을 더해<br />
-                                고객감동 서비스를 제공
-                            </h2>
+                            <span className="text-orange-600 font-bold tracking-widest text-sm mb-4 block">NATURE</span>
+                            <h3 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                                자연이 선물한<br />
+                                깊고 풍부한 단맛
+                            </h3>
                             <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                                첨단 기술력과 풍부한 노하우를 바탕으로 최적의 솔루션을 제공합니다.<br />고객의 요구조건을 뛰어넘는 완벽한 서비스를 완성하기 위해 우리는 언제나<br />작은 디테일에도 열정을 쏟고 있습니다.
+                                일교차가 큰 골짜기에서 충분한 햇빛을 맞고 자란 과일들은 과육이 단단하고 당도가 월등히 높습니다.<br />
+                                억지로 익히지 않고 자연의 시계에 맞춰 가장 적기에 수확해 <strong>자연 그대로의 달콤함</strong>을 선사합니다.
                             </p>
                         </div>
-                        <div className="lg:w-1/2 md:pl-12 lg:pl-0">
-                            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative bg-gray-100">
-                                <div className="vision-img absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
+                        <div className="lg:w-1/2 md:pl-12 lg:pl-0 relative">
+                            <div className="absolute -inset-4 bg-green-100/50 rounded-full blur-3xl -z-10" />
+                            <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-green-50">
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/sample/img/orchard-story2.png')" }} />
                             </div>
                         </div>
                     </div>
 
-                    {/* Vision 3 */}
-                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-                        <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1">
-                            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative bg-gray-100">
-                                <div className="vision-img absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center" />
+                    {/* Story 3 */}
+                    <div className="intro-element opacity-0 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+                        <div className="lg:w-1/2 md:pl-12 lg:pl-0 order-2 lg:order-1 relative">
+                            <div className="absolute -inset-4 bg-yellow-100/50 rounded-full blur-3xl -z-10" />
+                            <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative bg-yellow-50">
+                                <div className="vision-img absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/sample/img/orchard-story3.png')" }} />
                             </div>
                         </div>
                         <div className="lg:w-1/2 text-left order-1 lg:order-2 md:pl-12 lg:pl-0">
-                            <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-4 block">Future Promise</span>
-                            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
-                                최상의 가이드로<br />미래 사회를 리드합니다
-                            </h2>
+                            <span className="text-orange-600 font-bold tracking-widest text-sm mb-4 block">FRESHNESS</span>
+                            <h3 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                                가지에서 식탁으로<br />
+                                당일 수확, 산지 직송
+                            </h3>
                             <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                                단순한 시스템 구축을 넘어 4차 산업혁명 시대를 이끌어가는 원동력이 되겠습니다.<br />완벽한 안정성을 갖춘 미래 지향적인 차세대 시스템으로 새로운 디지털 문화를<br />창조해 나갈 것을 약속드립니다.
+                                유통 과정 없이 농장에서 직접 댁으로 보내드립니다.<br />
+                                주문이 들어오면 당일 새벽 이슬을 맞고 자란 과일들만 골라 정성껏 포장합니다. <strong>가장 신선할 때</strong> 맛보실 수 있습니다.
                             </p>
                         </div>
                     </div>

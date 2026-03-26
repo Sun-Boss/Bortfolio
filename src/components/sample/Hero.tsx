@@ -8,51 +8,55 @@ export default function Hero() {
 
     useGSAP(() => {
         gsap.from(".hero-element", {
-            y: 30,
+            y: 40,
             opacity: 0,
-            duration: 1,
+            duration: 1.2,
             stagger: 0.2,
             ease: "power3.out"
         });
+
     }, { scope: container });
 
     return (
-        <section ref={container} id="about" className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 bg-transparent text-gray-900 overflow-hidden">
-            <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16">
+        <section ref={container} id="home" className="relative min-h-screen flex items-center pt-20 bg-[#fdfbf7] overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                {/* Image of fresh apples in an orchard */}
+                <div className="hero-bg absolute inset-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('/sample/img/orchard-hero.png')" }} />
+                <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#fdfbf7] via-transparent to-transparent" />
+            </div>
 
-                <div className="lg:w-1/2 flex flex-col items-start text-left">
-                    <span className="hero-element inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6 tracking-wide">
-                        IT 서비스 전문기업
+            <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center">
+
+                <div className="lg:w-3/5 flex flex-col items-start text-left pt-20 pb-32">
+                    <span className="hero-element inline-block py-1.5 px-4 rounded-full bg-orange-100 text-orange-600 border border-orange-200 text-sm font-bold mb-6 tracking-wider">
+                        PREMIUM FRESH FRUITS
                     </span>
-                    <h1 className="hero-element text-4xl lg:text-6xl font-black leading-[1.15] mb-8 tracking-tight text-gray-900">
-                        고객에게<br />새로운 가치를 드리는 <br />
-                        <span className="text-blue-600">동반 성장 파트너</span>
+                    <h1 className="hero-element text-5xl lg:text-7xl font-black leading-[1.2] mb-8 tracking-tight text-gray-900 drop-shadow-sm">
+                        갓 딴 신선함을<br />문 앞까지<br />
+                        <span className="text-orange-500">지현이네 과수원</span>
                     </h1>
-                    <p className="hero-element text-lg lg:text-xl text-gray-600 font-medium leading-relaxed mb-10 max-w-xl">
-                        디에스인포시스(주)는 끊임없는 기술 혁신과 도전 정신으로<br />고객의 비즈니스 가치를 극대화합니다.<br />SI, 보안, IoT, 금융 전문 최적화 솔루션을 제공하며<br />변화와 혁신을 이끌어갑니다.
+                    <p className="hero-element text-lg lg:text-2xl text-gray-700 font-medium leading-relaxed mb-12 max-w-2xl drop-shadow-sm">
+                        맑은 공기와 따스한 햇살 아래서<br />
+                        3대째 정성껏 키워낸 달콤하고 건강한 제철 과일.<br />
+                        자연의 맛을 그대로 전해드립니다.
                     </p>
-                    <div className="hero-element flex flex-col sm:flex-row gap-4">
-                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition-all shadow-lg hover:shadow-blue-600/30">
-                            제안 및 문의하기
-                        </button>
-                        <button className="px-8 py-4 bg-white border border-gray-300 hover:border-gray-400 text-gray-800 rounded-lg font-bold transition-all shadow-sm">
-                            회사소개 보기 →
-                        </button>
+                    <div className="hero-element flex flex-col sm:flex-row gap-5">
+                        <a href="#products" className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-bold text-lg transition-all shadow-[0_4px_20px_rgba(249,115,22,0.3)] hover:shadow-[0_8px_30px_rgba(249,115,22,0.5)] text-center">
+                            제철 과일 만나보기
+                        </a>
+                        <a href="#story" className="px-8 py-4 bg-white/60 backdrop-blur-md border border-gray-200 hover:bg-white/90 text-gray-800 hover:text-orange-600 rounded-full font-bold text-lg transition-all text-center">
+                            우리 가족 이야기
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div className="lg:w-1/2 relative hero-element">
-                    <div className="absolute inset-0 bg-blue-50 rounded-3xl transform rotate-3 scale-105 -z-10" />
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-white border border-gray-100 flex items-center justify-center p-8">
-                        {/* Placeholder for an actual CAD/Blueprint interface image */}
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-80" />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent" />
-                        <div className="relative z-10 bg-white/90 backdrop-blur-md p-6 rounded-xl border border-white max-w-xs shadow-xl rotate-[-2deg]">
-                            <h3 className="text-blue-600 font-bold mb-2">미래지향적 시스템</h3>
-                            <p className="text-sm text-gray-600">4차 산업혁명 시대를 이끌어가는<br />원동력으로 완벽한 안정성을 갖춘<br />디지털 문화를 창조합니다.</p>
-                        </div>
-                    </div>
-                </div>
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70 animate-bounce">
+                <span className="text-xs tracking-widest uppercase font-semibold text-gray-500">Scroll</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
             </div>
         </section>
     );
